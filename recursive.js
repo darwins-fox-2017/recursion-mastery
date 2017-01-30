@@ -45,7 +45,7 @@ let simple_recursive = (number) => {
       count *= num[i]
     }
   }
-  return simple_recursive
+  return simple_recursive(count)
 }
 
 console.log(simple_recursive(39))  // 4
