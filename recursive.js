@@ -5,7 +5,13 @@
 // Release 0
 
 let prime_factors = (angka, hasil = []) => {
-  // write your code here
+  for (let i = 2; i <= angka; i++) {
+    if (angka % i === 0) {
+      hasil.push(i)
+      angka /= i;
+    }
+  }
+  return hasil
 }
 
 console.log(prime_factors(3))  // [3]
@@ -19,7 +25,16 @@ console.log(prime_factors(123123123)) // [3, 3, 41, 333667]
 // Release 1
 
 let simple_recursive = (number) => {
-  // write your code here
+  let numStr     = number.toString();
+  let resultNum  = 1;
+
+  for (let i = 0; i < numStr.length; i++) {
+    while (numStr.length === 1) {
+      return number
+    }
+    resultNum *= numStr[i];
+  }
+  return simple_recursive(resultNum)
 }
 
 console.log(simple_recursive(39))  // 4
